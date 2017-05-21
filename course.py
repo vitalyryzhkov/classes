@@ -5,7 +5,13 @@ class Course:
         self.lecturers = []
 
     def add_lecturer(self, lecturer):
-        pass
+        if lecturer not in self.lecturers:
+            self.lecturers.append(lecturer)
+
 
     def print_info(self):
-        pass
+        print("Course title: %s" % self.name )
+        print("Lecturers: ")
+        for lecturer in self.lecturers:
+            print("\t%s" % lecturer.name)
+
