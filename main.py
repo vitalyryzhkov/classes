@@ -50,25 +50,21 @@ import course
 import professor
 import student
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     pr1 = professor.Professor("Dr. Adams")
     pr2 = professor.Professor("Dr. Smith")
     course1 = course.Course("ML")
-    course2 = course.Course("MLX")
 
     course1.add_lecturer(pr1)
     course1.add_lecturer(pr2)
-    # course1.print_info()
+    course1.print_info()
 
     pr1.add_course(course1)
-    pr1.add_course(course2)
-
     pr1.print_info()
+    pr2.print_info()
 
-    st1 = student.Student("Alice", car="MB", age=17, year=2)
-    st2 = student.Student("Bob")
+    st1 = student.Student("Alice")
     st1.print_info()
-    # st2.print_info()
 
-
+    print(pr1)
