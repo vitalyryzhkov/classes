@@ -6,13 +6,17 @@ class Professor(person.Person):
         # self.name = name
         self.courses = []
 
+    def __str__(self):
+        str_repr = "Professor name: %s" % self.name
+        return str_repr
+
     def add_course(self, course):
         if course not in self.courses:
             self.courses.append(course)
 
     def print_info(self):
-        # print("Lecture: %s" % self.name)
+        # print("Professor name: %s" % self.name)
         person.Person.print_info(self)
-        print("Courses: ")
+        print("Courses:")
         for course in self.courses:
-            print("\t%s" % course.name)
+            print(self._format_row("\tTitle", course.name))
