@@ -12,13 +12,28 @@ class B(A):
         print("methodB")
 
 
-class D(B):
-    def __init__(self, name):
-        B.__init__(self, name)
-        print("D.__init__")
-
-
 b = B("AAA")
+print("D.__init__")
+
+
+class C(A):
+    def __init__(self, name):
+        super().__init__(name)
+        # A.__init__(self, name)
+        print("C.__init__")
+
+    def methodB(self):
+        pass
+
+
+
+class D(B, C):
+    def __init__(self, name):
+        super().__init__("bbb")
+        # B.__init__(self, "bvbb")
+        # C.__init__(self, "ccvc")
+        def methodB(self):
+            print("methodB")
 
 
 print(b.attr1)
